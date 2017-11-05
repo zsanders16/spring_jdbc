@@ -47,5 +47,11 @@ public class Organization {
 		this.slogan = slogan;
 	}
 	
+	@Override
+	public String toString() {
+		return "Organizatipon [id=" + id + ", companyName=" + companyName + ", yearOfIncorportion"
+				+ yearOfIncorporation + ", postalCode=" + postalCode + ", employeeCount=" + employeeCount + ", slogan"
+				+ slogan + "]";
+	}
 	
 }
