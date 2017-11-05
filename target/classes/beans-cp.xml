@@ -13,9 +13,11 @@
 		</property>
 		<property name="url" value="${jdbc.url}"></property>
 	</bean>
-	<bean id="orgDao"
+	<!-- <bean id="orgDao"
 		class="com.sanders.springdemo.daoimpl.OrganizationDaoImpl">
 	<property name="dataSource" ref="ds"></property>
-	</bean>
+	</bean> -->
+	<context:component-scan base-package="com.sanders.springdemo"></context:component-scan>
 	<context:property-placeholder location="organization.properties" />
 </beans>
+ 
