@@ -47,13 +47,17 @@ public class OrganizationDaoImpl implements OrganizationDao {
 	}
 
 	public boolean delete(Organization org) {
-		// TODO Auto-generated method stub
-		return false;
+		String sqlQuery = "DELETE FROM organization WHERE id = ?";
+		Object[] args = new Object[] { org.getId() };
+		return jdbcTemplate.update(sqlQuery, args) == 1;
 	}
 
 	public boolean update(Organization org) {
-		// TODO Auto-generated method stub
-		return false;
+		String sqlQuery = "UPDATE organization SET slogan = ? WHERE id = ?";
+		Object[] args = new Object[] { org.getSlogan(), org.getId() };
+		
+		return jdbcTemplate.update(sqlQuery, args) == 1;
+		
 	}
 
 	public void cleanup() {
