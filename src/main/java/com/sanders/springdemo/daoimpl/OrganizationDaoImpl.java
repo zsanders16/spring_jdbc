@@ -19,7 +19,6 @@ public class OrganizationDaoImpl implements OrganizationDao {
 	@Autowired
 	public void setDataSource(DataSource dataSource) {
 		jdbcTemplate = new JdbcTemplate(dataSource);
-
 	}
 
 	public boolean create(Organization org) {
@@ -32,13 +31,17 @@ public class OrganizationDaoImpl implements OrganizationDao {
 	}
 
 	public Organization getOrganization(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		String sqlQuery = "SELECT id, company_name, year_of_incorporation, postal_code, employee_count, slogan" + 
+						" FROM organization WHERE id = ?";
+		Object[] args = new Object[] {id};
+		Organization org = jdbcTemplate.queryForObject(sqlQuery, args, new OrganizationRowMapper());
+		
+		return org;
 	}
 
 	public List<Organization> getAllOrgnizations() {
 		String sqlQuery = "SELECT * FROM organization";
-		List<Organization> orgList = jdbcTemplate.query(sqlQuery, new OrgnizationRowMapper());
+		List<Organization> orgList = jdbcTemplate.query(sqlQuery, new OrganizationRowMapper());
 		
 		return orgList;
 	}

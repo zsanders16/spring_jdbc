@@ -7,7 +7,7 @@ import org.springframework.jdbc.core.RowMapper;
 
 import com.sanders.springdemo.domain.Organization;
 
-public class OrgnizationRowMapper implements RowMapper<Organization> {
+public class OrganizationRowMapper implements RowMapper<Organization> {
 
 	public Organization mapRow(ResultSet rs, int rownum) throws SQLException {
 		Organization org = new Organization();

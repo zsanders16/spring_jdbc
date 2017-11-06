@@ -9,6 +9,22 @@ public class Organization {
 	private int employeeCount;
 	private String slogan;
 	
+	public Organization() {
+		
+	}
+	
+	public Organization(String companyName, int yearOfIncorporation, String postalCode, int employeeCount,
+			String slogan) {
+		super();
+		this.id = id;
+		this.companyName = companyName;
+		this.yearOfIncorporation = yearOfIncorporation;
+		this.postalCode = postalCode;
+		this.employeeCount = employeeCount;
+		this.slogan = slogan;
+	}
+	
+	
 	//Getters and Setters 
 	public int getId() {
 		return id;
@@ -50,7 +66,7 @@ public class Organization {
 	@Override
 	public String toString() {
 		return "Organizatipon [id=" + id + ", companyName=" + companyName + ", yearOfIncorportion"
-				+ yearOfIncorporation + ", postalCode=" + postalCode + ", employeeCount=" + employeeCount + ", slogan"
+				+ yearOfIncorporation + ", postalCode=" + postalCode + ", employeeCount=" + employeeCount + ", slogan="
 				+ slogan + "]";
 	}
 	
